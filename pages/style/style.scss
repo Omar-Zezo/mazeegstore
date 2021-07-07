@@ -1,11 +1,11 @@
 // Variable
 $mainColor: #FFCC29;
 $secondColor: #5e1d0f;
-$textColor: #111;
+$textColor: #222;
 $gradient: linear-gradient(right,#00EAD3,#FFCC29 70%);
 // Global Style
 body {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 17px;
   background-color: #f7f7f7;
 }
@@ -34,13 +34,14 @@ a {
 // start header
 .header {
   padding: 15px 0;
-  background: #D4AF37;
+  background: $gradient;
   .info {
     width: 40%;
     margin-left: auto;
     li {
       display: inline-block;
       margin-right: 10px;
+      font-size: 18px;
       color: #fff;
       a {
         color: #fff;
@@ -57,7 +58,7 @@ a {
       margin-right: 20px;
       color: #fff;
       &:hover i {
-        color: $secondColor;
+        color: #EEE;
       }
       i {
         margin-left: 5px;
@@ -65,6 +66,7 @@ a {
       a {
         color: #fff;
         text-decoration: none;
+        font-weight: bold;
       }
     }
   }
@@ -89,77 +91,66 @@ a {
     li {
       display: inline-block;
       height: 100%;
-      .sub-menu{
-        position: absolute;
-        right: 0;
-        top: 126px;
-        z-index: 5;
-        width: 98.7vw;
-        background-color: rgba(255, 255, 255, 0.9);
-        height: 500px;
-        display: none;
-        .all-categories{
-          width: 100%;
-          height: 100%;
-            .inner{
-              width: 100%;
-              height: 100%;
-              display: flex;
-              justify-content: space-between;
-              .cat{
-                width: calc(100% / 3);
-                height: 100%;
-                background-color: rgba(255, 255, 255, 0.9);
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                .cat-items{
-                  width: 100%;
-                  height: 49%;
-                  padding: 50px 20px;
-                  display: flex;
-                  img{
-                    width: 50%;
-                  }
-                  .links-items{
-                    display: inline-block;
-                    width: 48%;
-                    height: 100%;
-                    h4{
-                      color: #39A2DB;
-                      font-weight: bold;
-                    }
-                    .link-item{
-                      display: block;
-                      color: $textColor;
-                      margin-top: 8px;
-                      &:last-child{
-                        margin: 0;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-        }
-      }
-      .nav-link {
+      a {
         color: $textColor;
         padding: 50% 10px;
         font-weight: bold;
-        font-size: 14px;
         position: relative;
         transition: all .3s ease-in-out;
         &:hover {
           color: $mainColor;
+          .sub-menu{
+            display: block;
+            transition: all .5s ease-in-out;
+          }
         }
         &.active {
           color: #da0037;
         }
-      }
-      &:hover{
         .sub-menu{
-          display: block;
+          position: absolute;
+          right: -300px;
+          top: 91px;
+          z-index: 5;
+          width: 98.7vw;
+          background-color: rgba(255, 255, 255, 0.9);
+          height: 500px;
+          display: none;
+          .all-categories{
+            width: 100%;
+            height: 100%;
+              .inner{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                .cat{
+                  width: calc(95% / 3);
+                  height: 100%;
+                  background-color: rgba(255, 255, 255, 0.9);
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  .cat-items{
+                    height: 49%;
+                    padding: 50px 20px;
+                    background-color: rosybrown;
+                    position: relative;
+                    display: flex;
+                    img{
+                      width: 50%;
+                      position: absolute;
+                      top: 50%;
+                      right: 10px;
+                      transform: translateY(-50%);
+                    }
+                    .items-links{
+                      width: 48%;
+                    }
+                  }
+                }
+              }
+          }
         }
       }
     }
@@ -277,7 +268,7 @@ a {
         padding: 10px 30px;
         background: $gradient;
         color: $textColor;
-        font-size: 20px;
+        font-size: 22px;
         position: relative;
         a{
           display: inline-block;
@@ -285,7 +276,7 @@ a {
           left: 50px;
           top: 50%;
           transform: translateY(-50%);
-          font-size: 18px;
+          font-size: 20px;
           color: $textColor;
         }
     }
@@ -355,7 +346,7 @@ a {
       padding: 10px 30px;
       background: $gradient;
       color: $textColor;
-      font-size: 20px;
+      font-size: 22px;
       position: relative;
       a{
         display: inline-block;
@@ -363,7 +354,7 @@ a {
         left: 50px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 18px;
+        font-size: 20px;
         color: $textColor;
       }
   }
@@ -425,7 +416,7 @@ a {
       padding: 10px 30px;
       background: $gradient;
       color: $textColor;
-      font-size: 20px;
+      font-size: 22px;
       position: relative;
       a{
         display: inline-block;
@@ -433,7 +424,7 @@ a {
         left: 50px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 18px;
+        font-size: 20px;
         color: $textColor;
       }
   }
@@ -463,8 +454,6 @@ a {
       }
       h4{
           margin-top: 10px;
-          font-size: 16px;
-          padding-bottom: 5px;
       }
       .price{
           display: flex;
@@ -489,7 +478,7 @@ a {
 // start footer
 .footer{
   min-height: 350px;
-  background: #D4AF37;
+  background: #121212;
   display: flex;
   align-items: center;
   @media screen and (max-width : 576px){
@@ -515,8 +504,21 @@ a {
       @media screen and (max-width : 576px){
         width: 100%;
       }
+      h3{
+        color: #efefef;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        @media screen and (max-width : 576px){
+          font-size: 18px;
+        }
+        span{
+          color: $mainColor;
+          margin-left: 10px;
+        }
+      }
       p{
-        color: $textColor;
+        color: #999;
         line-height: 1.7;
         font-size: 15px;
         @media screen and (max-width : 576px){
@@ -541,7 +543,8 @@ a {
           width: 100%;
         }
         h4{
-          color: $textColor;
+          color: #efefef;
+          font-size: 20px;
           margin-bottom: 20px;
           position: relative;
           padding-bottom: 20px;
@@ -552,12 +555,13 @@ a {
             position: absolute;
             bottom: 0;
             right: 0;
-            background-color: $secondColor;
+            background-color: $mainColor;
           }
         }
         a{
           display: block;
-          color: $textColor;
+          color: #CCC;
+          font-size: 19px;
           margin-bottom: 15px;
           &:hover{
             color: #E7C98E;
@@ -573,9 +577,9 @@ a {
 footer{
   padding: 10px;
   text-align: center;
-  background-color: #b19025;
+  background-color: #191919;
   p{
-    color: $textColor;
+    color: #777;
     font-size: 15px;
   }
 }
